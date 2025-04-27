@@ -1,0 +1,158 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+    transition: background 0.5s, color 0.5s;
+  }
+  
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1em 2em;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8e44ad;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  .nav-links li a,
+  .nav-links li button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .section {
+    padding: 4em 2em;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .section h1,
+  .section h2 {
+    color: #ffffff;
+    margin-bottom: 1em;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Botón WhatsApp */
+  .whatsapp-btn {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 1em 2em;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background 0.3s;
+  }
+  
+  .whatsapp-btn:hover {
+    background-color: #1ebd5c;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #24243e;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 1em;
+      border-radius: 8px;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  /* Modo Claro */
+  body.claro {
+    background: #ffffff;
+    color: #24243e;
+  }
+  
+  body.claro header,
+  body.claro footer {
+    background: #eeeeee;
+  }
+  
+  body.claro .logo {
+    color: #3498db;
+  }
+  
+  body.claro .nav-links li a,
+  body.claro .nav-links li button {
+    color: #24243e;
+  }
+  
+  body.claro .whatsapp-btn {
+    background-color: #1ebd5c;
+    color: white;
+  }
+  
+  body.claro .whatsapp-btn:hover {
+    background-color: #17a34f;
+  }
+  
