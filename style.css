@@ -4,79 +4,91 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-  }
-  
-  body {
+}
+
+body {
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     color: white;
     transition: background 0.5s, color 0.5s;
-  }
-  
-  header {
-    background: rgba(0, 0, 0, 0.6);
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background: rgba(0, 0, 0, 0.7); /* Fondo opaco */
+    width: 100%;
     padding: 1em 2em;
     position: sticky;
     top: 0;
     z-index: 999;
-  }
-  
-  .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Asegura que el contenido esté centrado */
     align-items: center;
-  }
-  
-  .logo {
-    font-size: 1.5em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Línea sutil en la parte inferior */
+}
+
+/* Contenedor del logo */
+.header-logo-container {
+    text-align: center; /* Centrado del logo */
+    flex-grow: 1;
+}
+
+/* Logo */
+.logo {
+    font-size: 2.5em; /* Tamaño del logo */
     font-weight: bold;
     color: #8e44ad;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5em;
-  }
-  
-  .nav-links li a,
-  .nav-links li button {
-    color: white;
-    text-decoration: none;
+    text-align: center; /* Asegura que el texto del logo esté centrado */
+}
+
+/* Botón modo oscuro/claro */
+#modo-toggle {
     background: none;
     border: none;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  .menu-toggle {
-    display: none;
+    color: white;
     font-size: 1.5em;
-    background: none;
-    border: none;
-    color: white;
     cursor: pointer;
-  }
-  
-  .section {
-    padding: 4em 2em;
+    transition: transform 0.3s;
+    position: absolute;
+    right: 2em; /* Ajustamos la posición para que se ubique a la derecha */
+}
+
+#modo-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Sección de contenido */
+.section {
+    padding: 6em 2em;
     text-align: center;
     animation: fadeIn 1s ease-in;
-  }
-  
-  .section h1,
-  .section h2 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    width: 100%; /* Asegura que se ajuste el contenido */
+}
+
+.section h1,
+.section h2 {
     color: #ffffff;
     margin-bottom: 1em;
-  }
-  
-  footer {
+    font-size: 2.5em;
     text-align: center;
-    padding: 2em;
-    background: rgba(0, 0, 0, 0.7);
-  }
-  
-  /* Botón WhatsApp */
-  .whatsapp-btn {
+}
+
+.section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+
+/* Botón WhatsApp */
+.whatsapp-btn {
     display: inline-block;
     margin-top: 1em;
     padding: 1em 2em;
@@ -87,72 +99,77 @@
     border-radius: 8px;
     font-size: 1.1em;
     transition: background 0.3s;
-  }
-  
-  .whatsapp-btn:hover {
+}
+
+.whatsapp-btn:hover {
     background-color: #1ebd5c;
-  }
-  
-  /* Animaciones */
-  @keyframes fadeIn {
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: #24243e;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 1em;
-      border-radius: 8px;
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  }
-  
-  /* Modo Claro */
-  body.claro {
+}
+
+/* Modo Claro */
+body.claro {
     background: #ffffff;
     color: #24243e;
-  }
-  
-  body.claro header,
-  body.claro footer {
+}
+
+body.claro header,
+body.claro footer {
     background: #eeeeee;
-  }
-  
-  body.claro .logo {
+}
+
+body.claro .logo {
     color: #3498db;
-  }
-  
-  body.claro .nav-links li a,
-  body.claro .nav-links li button {
+}
+
+body.claro .nav-links li a {
     color: #24243e;
-  }
-  
-  body.claro .whatsapp-btn {
+}
+
+body.claro .whatsapp-btn {
     background-color: #1ebd5c;
     color: white;
-  }
-  
-  body.claro .whatsapp-btn:hover {
+}
+
+body.claro .whatsapp-btn:hover {
     background-color: #17a34f;
-  }
-  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #24243e;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1em;
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
